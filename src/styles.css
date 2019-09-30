@@ -38,7 +38,7 @@
   background-color: goldenrod;
 }
 
-th {
+td {
   border: 1px black solid;
   height: 120px;
   width: 20%;
@@ -46,6 +46,6 @@ th {
   font-size: 3vw;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-th:hover {
+td:hover {
   background-color: rgb(230, 231, 171);
 }
