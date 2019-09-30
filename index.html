@@ -118,7 +118,7 @@
         this.innerHTML = pelaaja;
         voitto();
         if (pelaaja == "X") {
-          pelaaja = "Y";
+          pelaaja = "O";
           document.getElementById("vuoro").innerHTML = "Pelaajan Y vuoro";
         } else {
           pelaaja = "X";
@@ -150,11 +150,11 @@
             ruudut[c] == "X" &&
             ruudut[d] == "X" &&
             ruudut[e] == "X") ||
-          (ruudut[a] == "Y" &&
-            ruudut[b] == "Y" &&
-            ruudut[c] == "Y" &&
-            ruudut[d] == "Y" &&
-            ruudut[e] == "Y")
+          (ruudut[a] == "O" &&
+            ruudut[b] == "O" &&
+            ruudut[c] == "O" &&
+            ruudut[d] == "O" &&
+            ruudut[e] == "O")
         ) {
           document.getElementById("pelaajan").innerHTML = "VOITTO " + pelaaja;
           ruudut = [
