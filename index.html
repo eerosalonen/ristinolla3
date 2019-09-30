@@ -100,6 +100,7 @@
     var pelaaja = "X";
     var ruutu = document.getElementsByTagName("td");
     var ruutuid = "juu";
+    var b ="";
     document.getElementById("reset").addEventListener("click", uusipeli, false);
     main();
     
@@ -188,7 +189,13 @@
             //ruutu[i].style.backgroundColor= "goldenrod";
             ruutu[i].classList.add("voittoväri");
           }
-          alert("Player " + pelaaja + " won!");
+          if (pelaaja=="X"){
+            b = "1";
+          }
+          else{
+            b = "2";
+          }
+          alert("Player " + b + " won!");
         } else {
         }
       }
