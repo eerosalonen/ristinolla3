@@ -6,7 +6,7 @@
   justify-content: center;
 }
 #pohja {
-  width: 340px;
+  width: 312px;
   background-color: rgb(201, 197, 197);
   border: 1px black solid;
   padding: 20px;
@@ -44,7 +44,7 @@
   border: 1px black solid;
   border-collapse: collapse;
   background-color: black;
-  width: 100%;
+  //width: 300px;
 }
 
 .voittoväri {
