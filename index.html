@@ -45,12 +45,17 @@
             <td id="25"></td>
         </tr>
     </table>
+    <div id="pbarb">
+    <div id="pbar"></div>
+    </div>
     <div>
         <p id="vuoro">Pelaaja X aloittaa</p>
         <p id="pelaajan"></p>
         <button id="reset";>RESET!</button> 
     </div>
+    
 </div>
+
 </div>
 <script> //Joo tässä tulee iso läjä voitto ehtoja. s
     var voittolista = [];
@@ -101,6 +106,8 @@
     var ruutu = document.getElementsByTagName("td");
     var ruutuid = "juu";
     var b ="";
+    var round = 1;
+    
     document.getElementById("reset").addEventListener("click", uusipeli, false);
     main();
     
@@ -119,18 +126,20 @@
         this.innerHTML = pelaaja;
         voitto();
         if (pelaaja == "X") {
+          this.classList.add("p1väri");
           pelaaja = "O";
-          document.getElementById("vuoro").innerHTML = "Pelaajan Y vuoro";
+          document.getElementById("vuoro").innerHTML = "Pelaajan O vuoro";
         } else {
+          this.classList.add("p2väri");
           pelaaja = "X";
           document.getElementById("vuoro").innerHTML = "Pelaajan X vuoro";
         }
       } else if (ruudut[ruutuid - 1] == "i") {
         document.getElementById("pelaajan").innerHTML =
-          "VOITTO " + pelaaja + " paina reset nappia";
+          "VOITTO " + pelaaja ;
       } else {
         document.getElementById("pelaajan").innerHTML = "siinä on jo merkki";
-      }
+      }move();
     }
     function voitto() {
       // Voitto funktio tallentaa kaikki mahdolliset voitto tapahtumat listoihin ja tallentaa nämä listat isompaan listaan. Näitä listoja se vertaa listaan pöydältä löytyvistä merkeistä ja määrittelee onko peli voitettu.
@@ -233,12 +242,54 @@
         pelaaja = "X";
         document.getElementById("vuoro").innerHTML = "Pelaajan X vuoro";
         document.getElementById("pelaajan").innerHTML = "ruudun nro.";
+        document.getElementById("pbar").style.width =0;
         //ruutu[i].style.backgroundColor= "white";
-    
-        ruutu[i].classList.remove("voittoväri");
+        ruutu[i].classList.remove("voittoväri","p1väri","p2väri");
       }
-    }</script>
-</body>
-<script>
+      if (round ==1){
+          round = 2;
+      }
+      else{
+        round=1;
+      }
+    }
+
+function move() {
+  var elem = document.getElementById("pbar");   
+  var aika = setInterval(frame, 100);
+  pituus1=1;
+  var p =pelaaja;
+  var r =round;
+  function frame() {
+    if (pituus1 >= 100) {
+      clearInterval(aika);
+      aikaloppui();
+    }
+    
+    else if (p!=pelaaja || r!=round) {
+      clearInterval(aika);
+    } 
+    else {
+      pituus1++;
+      elem.style.width = pituus1 + '%'; 
+    }
+  }
+}
+function aikaloppui(){
+        document.getElementById("pbar").style.width = 0;
+        document.getElementById("pelaajan").innerHTML = "Aikasi loppui";
+        if (pelaaja =="X"){
+          pelaaja = "O";
+          document.getElementById("vuoro").innerHTML = "Pelaajan O vuoro";
+          move();
+        }
+        else{
+          pelaaja = "X";
+          document.getElementById("vuoro").innerHTML = "Pelaajan X vuoro";
+          move();
+        }
+
+}
 </script>
+</body>
 </html>
