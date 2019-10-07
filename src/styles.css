@@ -57,8 +57,9 @@
   background-color: rgb(250, 128, 114);
 }
 
-td {
+td{
   border: 1px black solid;
+  border-collapse:collapse;
   height: 60px;
   width: 60px;
   background-color: whitesmoke;
