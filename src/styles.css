@@ -5,23 +5,28 @@
   display: flex;
   justify-content: center;
 }
+.col {
+  border: 1px solid #eee;
+  margin: 7px 0;
+  text-align: center;
+  line-height: 50px;
+  /* background-color: tomato; */
+  /* color: white; */
+  background-color: #ffc107;
+  padding: 0;
+  height: 20px;
+}
 #pohja {
   width: 320px;
   background-color: rgb(201, 197, 197);
   border: 1px black solid;
   padding: 20px;
 }
-#pbar{
-  background-color: black;
-  height:30px;
-  border-top:none;
-  width:0;
+
+#pbar {
+  width: 0;
 }
-#pbarb{
-  background-color: darkgray;
-  height:30px;
-  border: 1px black solid;
-  border-top:none;
+#pbarb {
 }
 #vuoro {
   font-size: 40px;
@@ -57,15 +62,15 @@
   background-color: rgb(250, 128, 114);
 }
 
-td{
+td {
   border: 1px black solid;
-  border-collapse:collapse;
+  border-collapse: collapse;
   height: 60px;
   width: 60px;
   background-color: whitesmoke;
   font-size: 30px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align:center;
+  text-align: center;
 }
 td:hover {
   background-color: rgb(230, 231, 171);
